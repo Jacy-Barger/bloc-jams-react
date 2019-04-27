@@ -14,6 +14,7 @@ class Album extends Component {
      currentSong: album.songs[0],
      isPlaying: false,
      hovered: '',
+     isPaused: false,
     };
 
     this.audioElement = document.createElement('audio');
@@ -28,6 +29,7 @@ class Album extends Component {
   pause() {
       this.audioElement.pause();
       this.setState({ isPlaying: false });
+      this.setState({ isPaused: true});
     }
 
   setSong(song) {
@@ -60,6 +62,10 @@ class Album extends Component {
    displayPlay(song, index) {
      if (this.state.isPlaying && this.state.currentSong === song) {
        return <span className="icon ion-md-pause"></span>
+     }
+
+     if (this.state.isPaused && this.state.currentSong === song) {
+       return <span className="icon ion-md-play"></span>
      }
 
      if (this.state.hovered === index) {
