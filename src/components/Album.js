@@ -5,15 +5,15 @@ class Album extends Component {
   constructor(props) {
     super(props);
 
-
-const album = albumData.find( album => {
-    return album.slug === this.props.match.params.slug
+    const album = albumData.find( album => {
+      return album.slug === this.props.match.params.slug
     });
 
     this.state = {
      album: album,
      currentSong: album.songs[0],
-     isPlaying: false
+     isPlaying: false,
+     hovered: '',
     };
 
     this.audioElement = document.createElement('audio');
@@ -40,9 +40,34 @@ const album = albumData.find( album => {
      if (this.state.isPlaying && isSameSong) {
       this.pause();
     } else {
-      if (!isSameSong) { this.setSong(song); } 
+      if (!isSameSong) { this.setSong(song); }
       this.play();
     }
+   }
+
+   mouseOver(index) {
+     this.setState({
+       hovered: index
+     })
+   }
+
+   mouseLeave() {
+     this.setState({
+       hovered: ''
+     })
+   }
+
+   displayPlay(song, index) {
+     if (this.state.isPlaying && this.state.currentSong === song) {
+       return <span className="icon ion-md-pause"></span>
+     }
+
+     if (this.state.hovered === index) {
+       return <span className="icon ion-md-play"></span>
+     }
+
+     return index + 1;
+
    }
 
    render() {
@@ -66,8 +91,11 @@ const album = albumData.find( album => {
           <tbody>
           {
             this.state.album.songs.map( (song, index) =>
-              <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-                <td>{index + 1}</td>
+              <tr className="song" key={index}
+                  onClick={() => this.handleSongClick(song)}
+                  onMouseOver={() => { this.mouseOver(index) }}
+                  onMouseLeave={() => { this.mouseLeave() }}>
+                <td>{this.displayPlay(song, index)}</td>
                 <td>{song.title}</td>
                 <td>{song.duration}</td>
               </tr>
