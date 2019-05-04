@@ -106,13 +106,8 @@ class Album extends Component {
     }
 
     formatTime(time) {
-      if ( time === Number(time) ) {
-        return (time / 60).toFixed(2);
-      }
-      else {
-        return "-:--";
-      }
-    }
+    return time ? `${Math.floor(time / 60)}:${Number(time % 60 / 100).toFixed(2).substr(2,3)}` : '-:--'
+  }
 
    mouseOver(index) {
      this.setState({
@@ -170,7 +165,7 @@ class Album extends Component {
                   onMouseLeave={() => { this.mouseLeave() }}>
                 <td>{this.displayPlay(song, index)}</td>
                 <td>{song.title}</td>
-                <td>{song.duration}</td>
+                <td>{this.formatTime(song.duration)}</td>
               </tr>
           )
         }
