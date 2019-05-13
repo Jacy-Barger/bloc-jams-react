@@ -1,3 +1,7 @@
+/*--------------------------------*/
+/*CSS provided by Bloc*/
+/*--------------------------------*/
+
 .App {
   text-align: center;
 }
@@ -34,4 +38,306 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+/*--------------------------------*/
+/*Landing Component*/
+/*--------------------------------*/
+
+.landing {
+  color: #fff;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: 'lato', 'arial', 'sans-serif';
+}
+
+.App {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(guitar.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+/*Header*/
+.main-landing-header {
+  color: #fff;
+  font-weight: 300;
+  font-family: 'lato', 'arial', 'sans-serif';
+  font-size: 300%;
+
+}
+
+
+/*Navigation*/
+nav {
+  height: 50px;
+}
+
+.nav-link:link,
+.nav-link:visited {
+   position: relative;
+   color: #fff;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-size: 110%;
+   border-bottom: 2px solid transparent;
+   margin: 15px;
+   float: right;
+   padding-bottom: 3px;
+
+}
+
+.nav-link:hover,
+.nav-link:active {
+  border-bottom: 2px solid #e67e22;
+  transition: border-bottom 0.4s;
+  padding-bottom: 3px;
+}
+
+
+
+/*--------------------------------*/
+/*Library Component*/
+/*--------------------------------*/
+
+.featured {
+  width: 60%;
+  margin-left: 290px;
+  padding-bottom: 5px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 30px;
+  font-family: 'lato', 'arial', 'sans-serif';
+  border-bottom: 2px inset #aaa;
+}
+
+.album-container {
+  padding: 10px;
+  display: inline-block;
+  width: 25%;
+  color: #fff;
+  font-weight: 300;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.album-container img{
+  width: 60%;
+  border: 2px solid #fff;
+
+}
+
+.album-container img:hover,
+.album-container img:active {
+  width: 60%;
+  -webkit-filter: brightness(125%);
+}
+
+.album-path:link,
+.album-path:visited {
+  color: #fff;
+  font-weight: 300;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.album-path:hover,
+.album-path:active {
+  color: #d5d5d5;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
+
+/*--------------------------------*/
+/*Album Component*/
+/*--------------------------------*/
+
+#album-info {
+  padding: 10px;
+  display: inline-block;
+  width: 25%;
+  color: #fff;
+  font-weight: 300;
+  font-size: 15px;
+  text-decoration: none;
+  float: left;
+}
+
+#album-info img {
+  width: 60%;
+  border: 2px solid #fff;
+}
+
+.song {
+  padding: 10px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+tbody {
+  display: inline-block;
+  height: 180px;
+  width: 1000px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.number-song {
+  padding-right: 15px;
+  padding-bottom: 10px;
+
+}
+
+.title-song {
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+
+}
+
+.duration-song {
+  padding-left: 20px;
+  padding-bottom: 10px;
+
+}
+
+
+
+/*--------------------------------*/
+/*PlayerBar Component*/
+/*--------------------------------*/
+
+.player-bar {
+  margin-top: 25px;
+}
+
+
+/*Button Components*/
+#buttons {
+  margin-bottom: 20px;
+}
+
+#previous {
+  -webkit-filter: brightness(75%);
+}
+
+#previous:hover {
+  -webkit-filter: brightness(125%);
+}
+
+#play-pause {
+  -webkit-filter: brightness(75%);
+}
+
+#play-pause:hover {
+  -webkit-filter: brightness(125%);
+}
+
+#next {
+  -webkit-filter: brightness(75%);
+}
+
+#next:hover {
+  -webkit-filter: brightness(125%);
+}
+
+
+
+/*Slider Components*/
+.time-control {
+  width: 100%;
+}
+
+.seek-bar-time {
+  -webkit-appearance: none;
+  width: 60%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.seek-bar-time::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #e67e22;
+  cursor: pointer;
+}
+
+.seek-bar-time::-moz-range-thumb {
+ width: 25px;
+ height: 25px;
+ border-radius: 50%;
+ background: #e67e22;
+ cursor: pointer;
+}
+
+.current-time {
+  color: #fff;
+  padding-bottom: 5px;
+}
+
+.total-time {
+  color: #fff;
+  padding-top: 5px;
+}
+
+.volume-control {
+  width: 100%;
+}
+
+.seek-bar-volume {
+  margin-top: 20px;
+  -webkit-appearance: none;
+  width: 60%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-left: 385px;
+}
+
+.seek-bar-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #e67e22;
+  cursor: pointer;
+}
+
+.seek-bar-volume::-webkit-slider-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #e67e22;
+  cursor: pointer;
+}
+
+.icon-ion-volume-low {
+  margin-left: 375px;
+  visibility: hidden;
+}
+
+.icon-ion-volume-high {
+  margin-left: 380px;
+  margin-top: 8px;
+  color: #fff;
 }

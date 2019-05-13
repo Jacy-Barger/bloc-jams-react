@@ -163,9 +163,9 @@ class Album extends Component {
                   onClick={() => this.handleSongClick(song)}
                   onMouseOver={() => { this.mouseOver(index) }}
                   onMouseLeave={() => { this.mouseLeave() }}>
-                <td>{this.displayPlay(song, index)}</td>
-                <td>{song.title}</td>
-                <td>{this.formatTime(song.duration)}</td>
+                <td className="number-song">{this.displayPlay(song, index)}</td>
+                <td className="title-song">{song.title}</td>
+                <td className="duration-song">{this.formatTime(song.duration)}</td>
               </tr>
           )
         }
